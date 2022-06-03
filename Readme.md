@@ -1,5 +1,7 @@
 # Build this image using 
 # docker build -t kapilpundit/node-js-backend-app .
+# Or you can give it a version like
+# docker push kapilpundit/node-js-backend-app:0.0.1
 # And run this image (container) using
 # docker run -it --rm --name node-js-backend-app -p 3030:3030 -d kapilpundit/node-js-backend-app
 # docker exec -it node-js-backend-app /bin/bash
@@ -8,3 +10,5 @@
 # Enter dockerhub password
 # Push docker image to dockerhub using
 # docker push kapilpundit/node-js-backend-app
+# Or
+# docker push kapilpundit/node-js-backend-app:0.0.1
