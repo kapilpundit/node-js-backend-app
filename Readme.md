@@ -1,7 +1,8 @@
 # Build this image using 
 # docker build -t kapilpundit/node-js-backend-app .
 # And run this image (container) using
-# docker run -it --name node-js-backend-app -p 3030:3030 -d kapilpundit/node-js-backend-app
+# docker run -it --rm --name node-js-backend-app -p 3030:3030 -d kapilpundit/node-js-backend-app
+# docker exec -it node-js-backend-app /bin/bash
 # Login to docker hub using
 # docker login -u kapilpundit
 # Enter dockerhub password
