@@ -4,7 +4,7 @@ services:
         depends_on:
             - mongodb
         ports:
-            - ${NODE_DOCKER_PORT}:3030
+            - ${NODE_DOCKER_PORT}:${NODE_DOCKER_PORT}
         env_file: ../.env
         volumes:
             - ${APPLICATION_VOLUME}:/home/node/app
@@ -15,6 +15,9 @@ services:
             - DB_PASSWORD=${MONGODB_PASSWORD}
             - DB_NAME=${MONGODB_DATABASE}
             - DB_PORT=${MONGODB_DOCKER_PORT}
+        networks:
+            - backend
+            - frontend
 
     mongodb:
         image: mongo:5.0.2
@@ -27,6 +30,11 @@ services:
             - ${MONGODB_LOCAL_PORT}:${MONGODB_DOCKER_PORT}
         volumes:
             - db:/data/db
+        networks:
+            - backend
 
-volumes:
-  db:
+volumes: 
+    db:
+networks:
+    backend:
+    frontend:
